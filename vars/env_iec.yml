@@ -1,0 +1,10 @@
+---
+
+instance_type: t2.micro
+image: ami-9bf712f4
+key_name: my_keypair
+security_group: test-as-sg
+instance_profile_name: test-as-irole
+region: eu-central-1
+subnet: subnet-d81370b1
+vpc: vpc-5d039534

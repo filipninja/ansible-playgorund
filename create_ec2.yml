@@ -1,0 +1,26 @@
+---
+
+- name: Create a sandbox instance
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    env: iec
+    state: present
+    instance_count: 1
+    private_key: "~/.ssh/philips-key.pem"
+  vars_files:
+    - vars/defaults.yml
+    - "vars/env_{{ env }}.yml"
+
+  tasks:
+    - include: "tasks/security_group.yml"
+    - include: "tasks/role.yml"
+    - include: "tasks/instance.yml"
+
+- name: Provision sandbox instance
+  hosts: launched
+  become: True
+  gather_facts: True
+  roles:
+    - hrs_haproxy

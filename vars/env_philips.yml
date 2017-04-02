@@ -1,0 +1,10 @@
+---
+
+instance_type: t2.micro
+image: ami-6d1c2007
+key_name: philips-key
+security_group: test-as-sg
+instance_profile_name: test-as-irole
+region: us-east-1
+subnet: subnet-478cf31f
+vpc: vpc-fe498799

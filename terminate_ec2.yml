@@ -1,0 +1,18 @@
+---
+
+- name: Delete a sandbox instances
+  hosts: "tag_Name_philips_test_as"
+  connection: local
+  gather_facts: False
+  vars:
+    env: iec
+  vars_files:
+    - vars/defaults.yml
+    - "vars/env_{{ env }}.yml"
+
+  tasks:
+    - name: Terminate instance
+      ec2:
+        region: "{{ region }}"
+        instance_id: "{{ hostvars[groups['tag_Name_philips_test_as'][0]]['ec2_id'] }}"
+        state: absent

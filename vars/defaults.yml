@@ -1,0 +1,12 @@
+---
+
+application: test
+component: as
+tier: app
+version: "1.0"
+
+owner: HRS-CloudCompetenceCenter
+creator: "frz01@hrs.com"
+shutdown: True
+
+assign_public_ip: yes
